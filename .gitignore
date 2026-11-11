@@ -1,0 +1,28 @@
+# Local generated artifacts and QA output
+/tmp/
+**/.taste-skill/
+**/shots/
+*.zip
+*.tar.gz
+/prototype/dist/Shortlist.html
+
+# Dependencies and future generated output (prototype/dist contains source)
+**/node_modules/
+**/.next/
+**/coverage/
+**/.vercel/
+**/.wrangler/
+*.log
+
+# Credentials and machine-local state
+**/.env
+**/.env.*
+!**/.env.example
+**/.aws/
+**/.codex/
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+
+/docs

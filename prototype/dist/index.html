@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="th" data-type="software" data-radius="soft" data-buttons="solid" data-motion>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Shortlist — พื้นที่ของหนังสั้น</title>
+  <meta name="description" content="ค้นพบหนังสั้นและหนังอิสระ เลือกเรื่องที่สนใจ และเก็บไว้ในรายการของคุณ ทดลองใช้งาน Shortlist รุ่นต้นแบบ">
+  <meta name="page-type" content="software">
+  <meta name="site-kind" content="software">
+  <meta name="theme-color" content="#faf9f6">
+  <meta property="og:title" content="Shortlist — พื้นที่ของหนังสั้น">
+  <meta property="og:description" content="ต้นแบบพื้นที่รวมหนังสั้น ค้นหา เลือกชม และบันทึกเรื่องที่อยากดู">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/capybara.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/motion.css">
+  <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+</head>
+<body>
+  <!-- Reference-led film catalog: white ground, dark wordmark, open poster grid. App density follows the supplied PDF rather than a marketing-page screen rhythm. -->
+  <a class="skip-link" href="#main">ข้ามไปเนื้อหา</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="icon-button" id="menu-toggle" aria-label="เปิดเมนู" aria-controls="menu-dialog" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <a href="#/films" class="header-explore">ค้นพบหนัง</a>
+      </div>
+      <a class="wordmark" href="#/" aria-label="Shortlist หน้าแรก">Shortlist<span class="brand-dot">.</span></a>
+      <nav class="header-right" aria-label="เมนูส่วนตัว">
+        <span class="prototype-tag">ต้นแบบ</span>
+        <button class="icon-button" id="search-toggle" aria-label="ค้นหาหนัง"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
+        <a class="icon-button saved-header" href="#/saved" aria-label="รายการที่บันทึก"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4z"/></svg><span id="saved-count" hidden>0</span></a>
+        <a class="avatar-link" href="#/profile" aria-label="โปรไฟล์ของคุณ"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="site-footer wrap">
+    <div class="footer-top"><a class="wordmark footer-logo" href="#/">Shortlist<span class="brand-dot">.</span></a><p>พื้นที่ของหนังสั้นและหนังอิสระ</p><a class="text-link" href="#/films">เลือกหนังสักเรื่อง <span aria-hidden="true">↗</span></a></div>
+    <div class="footer-bottom"><span>© 2026 Shortlist · ต้นแบบทดลองใช้งาน</span><span>ภาพจากแบบที่คุณส่งมา · ข้อมูลหนังเพื่อทดลองหน้าจอ</span><button class="plain-button" id="about-toggle">เกี่ยวกับต้นแบบ</button></div>
+  </footer>
+  <dialog id="menu-dialog" class="drawer" aria-labelledby="menu-title">
+    <div class="drawer-header"><span class="wordmark" id="menu-title">Shortlist.</span><button class="icon-button" data-close aria-label="ปิดเมนู">×</button></div>
+    <p class="eyebrow">พื้นที่ของหนังสั้น</p>
+    <nav class="drawer-links" aria-label="เมนูหลัก"><a href="#/">หน้าแรก <span>01</span></a><a href="#/films">ภาพยนตร์ทั้งหมด <span>02</span></a><a href="#/films?type=short">ภาพยนตร์สั้น <span>03</span></a><a href="#/films?type=independent">ภาพยนตร์อิสระ <span>04</span></a><a href="#/saved">รายการที่บันทึก <span>05</span></a><a href="#/profile">โปรไฟล์ของคุณ <span>06</span></a></nav>
+    <div class="drawer-categories"><p class="eyebrow">เลือกตามอารมณ์</p><a href="#/category/romance">ความรัก ↗</a><a href="#/category/horror">สยองขวัญ ↗</a><a href="#/category/documentary">สารคดี ↗</a></div>
+    <p class="drawer-note">ต้นแบบที่เปิดให้คุณลองค้นหา เลือกชม และเก็บหนังที่สนใจ</p>
+  </dialog>
+  <dialog id="search-dialog" class="search-dialog" aria-labelledby="search-title"><div class="dialog-top"><h2 id="search-title">วันนี้อยากดูเรื่องอะไร</h2><button class="icon-button" data-close aria-label="ปิดการค้นหา">×</button></div><form id="search-form"><label for="global-search">ค้นหาจากชื่อหนังหรือประเภท</label><div class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="global-search" type="search" autocomplete="off" placeholder="ชื่อเรื่อง ประเภท หรือคำที่สนใจ"><button class="btn btn--primary" type="submit">ค้นหาหนัง</button></div></form><p id="search-summary" role="status" class="muted"></p><div id="search-results" class="search-results"></div></dialog>
+  <dialog id="player-dialog" class="player-dialog" aria-labelledby="player-title"><div class="dialog-top"><div><span class="eyebrow">ทดลองเครื่องเล่น</span><h2 id="player-title">วิดีโอสาธิต</h2></div><button class="icon-button" data-close aria-label="ปิดเครื่องเล่น">×</button></div><video id="demo-video" controls playsinline preload="none" aria-label="ตัวอย่างภาพยนตร์ Sintel"><source src="https://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">เบราว์เซอร์นี้ไม่รองรับเครื่องเล่นวิดีโอ</video><p id="video-error" class="error-message" hidden>โหลดวิดีโอไม่สำเร็จ กรุณาตรวจสอบอินเทอร์เน็ตแล้วลองเปิดใหม่</p><div class="player-note"><p>ต้นแบบนี้ใช้ตัวอย่างภาพยนตร์ <strong>Sintel</strong> สำหรับทดสอบการรับชม จึงยังไม่ใช่ตัวหนังที่คุณเลือก</p><a href="https://durian.blender.org/sharing/" target="_blank" rel="noopener noreferrer">© Blender Foundation · CC BY 3.0 ↗</a></div></dialog>
+  <dialog id="about-dialog" class="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><h2 id="about-title">ลอง Shortlist ก่อนเปิดจริง</h2><button class="icon-button" data-close aria-label="ปิดรายละเอียดต้นแบบ">×</button></div><p>นี่คือต้นแบบจากภาพตัวอย่างที่คุณส่งมา ลองค้นหาหนัง เปิดรายละเอียด เล่นวิดีโอสาธิต และบันทึกเรื่องที่สนใจได้</p><p>ชื่อโปรไฟล์และรายการที่บันทึกเก็บไว้เฉพาะเบราว์เซอร์นี้ ยังไม่มีการสมัครสมาชิก อัปโหลดหนัง หรือเรียกเก็บเงิน</p><p>ภาพและชื่อเรื่องอ้างอิงจากแบบ ข้อมูลประกอบบางส่วนจัดทำเพื่อทดลองหน้าจอ ไม่ใช่ข้อมูลเผยแพร่จริงของภาพยนตร์</p><a class="text-link" href="https://durian.blender.org/sharing/" target="_blank" rel="noopener noreferrer">วิดีโอสาธิต Sintel © Blender Foundation · CC BY 3.0 ↗</a></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="wrap">โปรดเปิด JavaScript เพื่อทดลองค้นหาและบันทึกหนังในต้นแบบนี้</p></noscript>
+  <script type="module" src="app.js"></script>
+  <script type="module" src="assets/motion.js"></script>
+</body>
+</html>
